@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS Calculator</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bayon&family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="main.js" defer></script>
+    <style>
+      .no-scroll {
+        overflow: hidden;
+      }
+      .fixed-error {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: calc(100% - 20px);
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border: 1px solid #f5c6cb;
+        border-radius: 4px;
+        z-index: 1000;
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 10px;
+        }
+        input {
+          width: 100%;
+        }
+      }
+      input {
+        height: 40px; /* Adjust based on your design */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <p class="nobar py-4 text-center">PS Calculator</p>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="loan_Amount" class="form-label fs-4"
+              >បញ្ចូលប្រាក់កម្ចី​​ ($)</label
+            >
+            <span class="span"></span>
+            <input
+              class="form-control rounded-2"
+              id="laon_Amount"
+              type="number"
+              min="0"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="pay_rate" class="form-label fs-4">ការប្រាក់​(%)</label>
+            <span class="span"></span>
+            <input
+              class="form-control rounded-2"
+              id="pay_rate"
+              type="number"
+              min="0"
+              max="100"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Payment_in_Years" class="form-label fs-4"
+              >រយះពេល (ខែ)</label
+            >
+            <span class="span"></span>
+            <input
+              class="form-control rounded-2"
+              id="Payment_in_Years"
+              type="number"
+              min="0"
+              max="12"
+            />
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-between">
+          <button
+            class="btn btn-primary mt-4 rounded-2"
+            onclick="Calculated();"
+          >
+            គណនា
+          </button>
+          <button
+            class="btn btn-success mt-4 rounded-2"
+            onclick="takeScreenshot();"
+          >
+            រក្សាទុក
+          </button>
+          <button class="btn btn-danger mt-4 rounded-2" onclick="reset();">
+            លុបចេញ
+          </button>
+        </div>
+        <div class="row mt-2 d-flex justify-content-between">
+          <div class="col-6">
+            <button
+              id="btn"
+              class="btn btn-warning mt-2 rounded-2 w-100"
+              onclick="convertkhmer();"
+            >
+              គិតជាលុយខ្មែរ
+            </button>
+          </div>
+          <div class="col-6">
+            <input
+              type="number"
+              id="inputkh"
+              class="w-100 rounded-2 border-0"
+              placeholder="បញ្ចូលតម្លៃនៃប្រាក់ខ្មែរ"
+            />
+          </div>
+        </div>
+        <div class="col-12 mt-4 fs-4">
+          <p id="result"></p>
+          <p id="paypermonth"></p>
+          <p id="fullpayrate"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
