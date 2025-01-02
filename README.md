@@ -1,4 +1,4 @@
-PS Calculator
+#PS Calculator
 
 This is a Loan Calculator web application that allows users to calculate the total amount to be repaid, monthly interest payments, and total interest over a given period in both USD and Khmer Riel (៛). The calculator also provides an option to take a screenshot of the results.
 Features
