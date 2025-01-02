@@ -1,4 +1,4 @@
-#PS Calculator
+#laon money Calculator
 
 This is a Loan Calculator web application that allows users to calculate the total amount to be repaid, monthly interest payments, and total interest over a given period in both USD and Khmer Riel (៛). The calculator also provides an option to take a screenshot of the results.
 Features
@@ -19,9 +19,8 @@ Technologies Used
     html2canvas: Library used for capturing screenshots of the page.
     Bootstrap: Framework used for responsive layout and styling.
 
-Demo
 
-You can see the live version of this application by visiting Your Website URL.
+
 How It Works
 
     Input Fields:
